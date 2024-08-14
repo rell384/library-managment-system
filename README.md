@@ -1,5 +1,4 @@
 # library managment system
-# Library Management System
 
 Welcome to the **Library Management System** project! This project is a web-based application designed to help manage books and users in a library. The application allows users to add new books, borrow books, and return them with ease.
 
