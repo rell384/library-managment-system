@@ -1,0 +1,105 @@
+﻿@model library_managment_system.Models.Book
+
+@{
+    ViewBag.Title = "Add Book";
+}
+
+<h2></h2>
+<div class="main-banner" id="top">
+<div class="contact-us section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6  align-self-center">
+                <div class="section-heading">
+                    <h6>Add Book</h6>
+                    <p>Thank you for choosing our Linbrary</p>
+                    <div class="special-offer">
+                        <span class="offer">off<br><em>50%</em></span>
+                        <h6>Valide: <em>24 April 2036</em></h6>
+                        <h4>Special Offer <em>50%</em> OFF!</h4>
+                        <a href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-us-content">
+                    <form id="contact-form" asp-action="SaveBook" method="post">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name)
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Image)
+                                        <select name="Image" class="form-control">
+                                            <option value="">-- Select an Image --</option>
+                                            @if (ViewBag.Images != null)
+                                            {
+                                                foreach (var image in ViewBag.Images as List<string>)
+                                                {
+                                                    <option value="@image">@image</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.TotalCopies)
+                                        @Html.TextBoxFor(model => model.TotalCopies, new { @class = "form-control" })
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="orange-button">Add New Book</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@* 
+<form asp-action="SaveBook" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image)
+        <select name="Image" class="form-control">
+            <option value="">-- Select an Image --</option>
+            @if (ViewBag.Images != null)
+            {
+                foreach (var image in ViewBag.Images as List<string>)
+                {
+                    <option value="@image">@image</option>
+                }
+            }
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TotalCopies)
+        @Html.TextBoxFor(model => model.TotalCopies, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Book</button>
+</form>
+ *@
